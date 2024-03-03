@@ -257,7 +257,7 @@ def estimate_kmean(save_path, task_id, model: torch.nn.Module,
             for itr in tqdm.tqdm(range(num_clusters)):
                 top_k_name = top_k_samples_name[itr]
                 for name in top_k_name:
-                    fp.write(name.replace("/data1/ywye/contiual_pretraining/3D/DeepLesion/DL_patches_v2_resize/", "DL_patches_v2/")+"\n") #Need to modify
+                    fp.write(name.replace("/data1/ywye/continual_pretrainingl/3D/DeepLesion/DL_patches_v2_resize/", "DL_patches_v2/")+"\n") #Need to modify
 
     elif args.task_modality == "3D_MR":
         file_path = f'{args.task_modality}_{center_num}_{buffer_ratio}_{exp_name}.txt'
@@ -270,7 +270,7 @@ def estimate_kmean(save_path, task_id, model: torch.nn.Module,
             for itr in tqdm.tqdm(range(num_clusters)):
                 top_k_name = top_k_samples_name[itr]
                 for name in top_k_name:
-                    fp.write(name.replace("/data1/ywye/contiual_pretraining/3D/ADNI/", "")+"\n") #Need to modify
+                    fp.write(name.replace("/data1/ywye/continual_pretraining/3D/ADNI/", "")+"\n") #Need to modify
 
     elif args.task_modality == "2D_path":
         file_path = f'{args.task_modality}_{center_num}_{buffer_ratio}_{exp_name}.json'

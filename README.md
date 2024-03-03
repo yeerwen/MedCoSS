@@ -12,10 +12,24 @@ Pytorch 1.11.0<br />
 CuDNN 8.3.2.44
 
 ### Data Preparation
-Coming soon.
+* Download the [MIMIC-CXR dataset](https://physionet.org/content/mimic-cxr-jpg/2.0.0/).
+* Download the [DeepLesion dataset](https://nihcc.app.box.com/v/DeepLesion).
+* Download the [ADNI dataset](https://adni.loni.usc.edu/).
+* Download [seven TCGA datasets](https://portal.gdc.cancer.gov/).
 
 ### Pre-processing
-Coming soon.
+* Report: Following [MGCA's procedure](https://github.com/HKU-MedAI/MGCA/blob/main/mgca/preprocess/mimic_cxr.py) to pre-process the MIMC-CXR dataset.
+* X-ray: Using `Preprocess/MIMIC_CXR_JPG_Preprocess.py` to pre-process the MIMC-CXR dataset.
+* CT: 
+  * Using `Preprocess/DL_save_nifti.py` (from downloaded files) to transfer the PNG image to the nii.gz form.
+  * Using `Preprocess/re_spacing_ITK.py` to resample CT volumes.
+  * Using `Preprocess/splitting_to_patches.py` to extract about 125k sub-volumes, and the pre-processed dataset will be saved in `DL_patches_v2/`.
+  * Using `Preprocess/DeepLesion_Resize.py` to resize images.
+* MRI: 
+  * Using `Preprocess/ADNI_Resize.py` to resize images.
+  * Using `Preprocess/ADNI_split_slice.py` to extract about 59k sub-volumes.
+* Pathological imaging: Using `Preprocess/TCGA_Preprocess.py` to pre-process seven TCGA datasets.
+
 
 ### Pre-training
 * Download [uni-perceiver-base-L12-H768-224size-torch-pretrained.pth](https://github.com/fundamentalvision/Uni-Perceiver/blob/main/data/checkpoints.md).
@@ -24,8 +38,8 @@ Coming soon.
 
 
 ## To do
-- [ ] Dataset Links
-- [ ] Pre-processing Code
+- [x] Dataset Links
+- [x] Pre-processing Code
 - [x] Pre-training Code Release
 - [ ] Pre-trained Model
 - [ ] Fine-tuning Code Release
