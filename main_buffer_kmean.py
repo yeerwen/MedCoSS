@@ -42,40 +42,17 @@ import json
 
 def get_args_parser():
     parser = argparse.ArgumentParser('MAE pre-training', add_help=False)
-    parser.add_argument('--batch_size', default=64, type=int,
-                        help='Batch size per GPU (effective batch size is batch_size * accum_iter * # gpus')
-    parser.add_argument('--epochs', default=400, type=int)
-    parser.add_argument('--prune_epochs', default=10, type=int)
-    parser.add_argument('--accum_iter', default=1, type=int,
-                        help='Accumulate gradient iterations (for increasing the effective batch size under memory constraints)')
 
     # Model parameters
     parser.add_argument('--model', default='unified_vit', type=str, metavar='MODEL',
                         help='Name of model to train')
 
-    parser.add_argument('--input_size', default=224, type=int,
-                        help='images input size')
-
-    parser.add_argument('--mask_ratio', default=0.75, type=float,
+    parser.add_argument('--mask_ratio', default=0.00, type=float,
                         help='Masking ratio (percentage of removed patches).')
 
     parser.add_argument('--norm_pix_loss', action='store_true',
                         help='Use (per-patch) normalized pixels as targets for computing loss')
     parser.set_defaults(norm_pix_loss=False)
-
-    # Optimizer parameters
-    parser.add_argument('--weight_decay', type=float, default=0.05,
-                        help='weight decay (default: 0.05)')
-
-    parser.add_argument('--lr', type=float, default=None, metavar='LR',
-                        help='learning rate (absolute lr)')
-    parser.add_argument('--blr', type=float, default=1e-3, metavar='LR',
-                        help='base learning rate: absolute_lr = base_lr * total_batch_size / 256')
-    parser.add_argument('--min_lr', type=float, default=0., metavar='LR',
-                        help='lower lr bound for cyclic schedulers that hit 0')
-
-    parser.add_argument('--warmup_epochs', type=int, default=40, metavar='N',
-                        help='epochs to warmup LR')
 
     # Dataset parameters
     parser.add_argument('--data_path', default='/datasets01/imagenet_full_size/061417/', type=str,
@@ -91,8 +68,6 @@ def get_args_parser():
     parser.add_argument('--resume', default='',
                         help='resume from checkpoint')
 
-    parser.add_argument('--start_epoch', default=0, type=int, metavar='N',
-                        help='start epoch')
     parser.add_argument('--num_workers', default=10, type=int)
     parser.add_argument('--pin_mem', action='store_true',
                         help='Pin CPU memory in DataLoader for more efficient (sometimes) transfer to GPU.')
@@ -206,6 +181,10 @@ def estimate_kmean(save_path, task_id, model: torch.nn.Module,
 
         img_feature.append(feature.cpu().detach().numpy())
         img_path_list.append(img_path)
+
+        # test only
+        # if len(img_feature) == 20:
+        #     break
         
 
     assert len(img_feature) == len(img_path_list)
@@ -251,7 +230,7 @@ def estimate_kmean(save_path, task_id, model: torch.nn.Module,
         df = pd.read_csv(os.path.join(args.data_path, "master.csv"))
         for itr in tqdm.tqdm(range(num_clusters)):
             top_k_name = top_k_samples_name[itr]
-            top_k_name = [spare_name.replace("/data/userdisk0/ywye/Pretrained_dataset/1D/2019.MIMIC-CXR-JPG/", "") for spare_name in top_k_name]
+            top_k_name = [spare_name.replace("/data/userdisk0/ywye/Pretrained_dataset/1D/2019.MIMIC-CXR-JPG/", "") for spare_name in top_k_name] #Need to modify
             filtered_df = df[df['Path'].isin(top_k_name)]
             assert len(top_k_name) == len(filtered_df)
             write_header = not pd.io.common.file_exists(os.path.join(save_path, file_path))
@@ -278,7 +257,7 @@ def estimate_kmean(save_path, task_id, model: torch.nn.Module,
             for itr in tqdm.tqdm(range(num_clusters)):
                 top_k_name = top_k_samples_name[itr]
                 for name in top_k_name:
-                    fp.write(name.replace("/data1/ywye/contiual_pretraining/3D/DeepLesion/DL_patches_v2_resize/", "DL_patches_v2/")+"\n")
+                    fp.write(name.replace("/data1/ywye/contiual_pretraining/3D/DeepLesion/DL_patches_v2_resize/", "DL_patches_v2/")+"\n") #Need to modify
 
     elif args.task_modality == "3D_MR":
         file_path = f'{args.task_modality}_{center_num}_{buffer_ratio}_{exp_name}.txt'
@@ -291,7 +270,7 @@ def estimate_kmean(save_path, task_id, model: torch.nn.Module,
             for itr in tqdm.tqdm(range(num_clusters)):
                 top_k_name = top_k_samples_name[itr]
                 for name in top_k_name:
-                    fp.write(name.replace("/data1/ywye/contiual_pretraining/3D/ADNI/", "")+"\n")
+                    fp.write(name.replace("/data1/ywye/contiual_pretraining/3D/ADNI/", "")+"\n") #Need to modify
 
     elif args.task_modality == "2D_path":
         file_path = f'{args.task_modality}_{center_num}_{buffer_ratio}_{exp_name}.json'

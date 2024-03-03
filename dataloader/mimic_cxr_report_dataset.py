@@ -277,7 +277,7 @@ class MIMIC_CXR_Report_Dataset_name(data.Dataset):
         self.df.reset_index(drop=True, inplace=True)
 
         self.tokenizer = BertTokenizer.from_pretrained(
-            "emilyalsentzer/Bio_ClinicalBERT")
+            "../Bio_ClinicalBERT")
         self.max_words = max_words
 
         self.mlm_collator = DataCollatorForWholeWordMask(tokenizer=self.tokenizer, mlm=False,

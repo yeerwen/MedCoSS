@@ -17,14 +17,8 @@ CUDA_VISIBLE_DEVICES=3,4,5,6 python -m torch.distributed.launch --nproc_per_node
 
 CUDA_VISIBLE_DEVICES=3 python main_buffer_kmean.py \
 --model "unified_vit" \
---batch_size 128 \
 --num_workers 10 \
 --norm_pix_loss \
---mask_ratio 0.75 \
---epochs 300 \
---prune_epochs 30 \
---warmup_epochs 40 \
---blr 1.5e-4 --weight_decay 0.05 \
 --data_path "/data/userdisk0/ywye/Pretrained_dataset/1D/2019.MIMIC-CXR-JPG/2.0.0/" \
 --task_modality "1D_text" \
 --load_current_pretrained_weight "./output_dir/1D_text_300/checkpoint-299.pth" \
@@ -59,14 +53,8 @@ CUDA_VISIBLE_DEVICES=3,4,5,6 python -m torch.distributed.launch --nproc_per_node
 
 CUDA_VISIBLE_DEVICES=3 python main_buffer_kmean.py \
 --model "unified_vit" \
---batch_size 128 \
 --num_workers 10 \
 --norm_pix_loss \
---mask_ratio 0.75 \
---epochs 300 \
---prune_epochs 30 \
---warmup_epochs 40 \
---blr 1.5e-4 --weight_decay 0.05 \
 --data_path "/data1/ywye/contiual_pretraining/2D/MIMIC-CXR-2.0-JPG/" \
 --task_modality "2D_xray" \
 --load_current_pretrained_weight "./output_dir/MedCoSS_Report_Xray_CT_MR_Path_buff_0.05_cen_0.01_2D_Xray_300/checkpoint-299.pth" \
@@ -101,14 +89,8 @@ CUDA_VISIBLE_DEVICES=3,4,5,6 python -m torch.distributed.launch --nproc_per_node
 
 CUDA_VISIBLE_DEVICES=3 python main_buffer_kmean.py \
 --model "unified_vit" \
---batch_size 128 \
 --num_workers 10 \
 --norm_pix_loss \
---mask_ratio 0.75 \
---epochs 300 \
---prune_epochs 30 \
---warmup_epochs 40 \
---blr 1.5e-4 --weight_decay 0.05 \
 --data_path "/data1/ywye/contiual_pretraining/3D/DeepLesion/" \
 --task_modality "3D_CT" \
 --load_current_pretrained_weight "./output_dir/MedCoSS_Report_Xray_CT_MR_Path_buff_0.05_cen_0.01_3D_CT_300/checkpoint-299.pth" \
@@ -145,14 +127,8 @@ CUDA_VISIBLE_DEVICES=3,4,5,6 python -m torch.distributed.launch --nproc_per_node
 
 CUDA_VISIBLE_DEVICES=3 python main_buffer_kmean.py \
 --model "unified_vit" \
---batch_size 128 \
 --num_workers 10 \
 --norm_pix_loss \
---mask_ratio 0.75 \
---epochs 300 \
---prune_epochs 30 \
---warmup_epochs 40 \
---blr 1.5e-4 --weight_decay 0.05 \
 --data_path "/data1/ywye/contiual_pretraining/3D/ADNI/" \
 --task_modality "3D_MR" \
 --load_current_pretrained_weight "./output_dir/MedCoSS_Report_Xray_CT_MR_Path_buff_0.05_cen_0.01_3D_MR_300/checkpoint-299.pth" \
