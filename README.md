@@ -15,10 +15,10 @@ CuDNN 8.3.2.44
 * Download the [MIMIC-CXR dataset](https://physionet.org/content/mimic-cxr-jpg/2.0.0/).
 * Download the [DeepLesion dataset](https://nihcc.app.box.com/v/DeepLesion).
 * Download the [ADNI dataset](https://adni.loni.usc.edu/).
-* Download [seven TCGA datasets](https://portal.gdc.cancer.gov/).
+* Download [seven TCGA datasets](https://portal.gdc.cancer.gov/) (TCGA-THYM, TCGA-THCA, TCGA-BRCA, TCGA-UCEC, TCGA-UVM, TCGA-OV, and TCGA-MESO).
 
 ### Pre-processing
-* Report: Following [MGCA's procedure](https://github.com/HKU-MedAI/MGCA/blob/main/mgca/preprocess/mimic_cxr.py) to pre-process the MIMC-CXR dataset.
+* Report: Following [MGCA's procedure](https://github.com/HKU-MedAI/MGCA/blob/main/mgca/preprocess/mimic_cxr.py) to pre-process the MIMIC-CXR dataset.
 * X-ray: Using `Preprocess/MIMIC_CXR_JPG_Preprocess.py` to pre-process the MIMC-CXR dataset.
 * CT: 
   * Using `Preprocess/DL_save_nifti.py` (from downloaded files) to transfer the PNG image to the nii.gz form.
