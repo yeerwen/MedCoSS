@@ -218,7 +218,7 @@ class Buffer_Dataset(data.Dataset):
             self.df.reset_index(drop=True, inplace=True)
 
             self.tokenizer = BertTokenizer.from_pretrained(
-                "../Bio_ClinicalBERT/")
+                "emilyalsentzer/Bio_ClinicalBERT")
             self.max_words = max_words
 
             self.mlm_collator = DataCollatorForWholeWordMask(tokenizer=self.tokenizer, mlm=True,
