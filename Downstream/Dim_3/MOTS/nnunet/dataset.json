@@ -1,0 +1,23 @@
+{ 
+"name": "ISICDM 2020 lung", 
+"description": "lung Vessels, Tumour Segmentation, and airway",
+"reference": "Memorial Sloan Kettering Cancer Center",
+"licence":"CC-BY-SA 4.0",
+"release":"1.1 12/11/2020",
+"tensorImageSize": "3D",
+"modality": { 
+   "0": "CT"
+ }, 
+ "labels": { 
+   "0": "background", 
+   "1": "airway", 
+   "2": "Vessels"
+ }, 
+ "numTraining": 16, 
+ "numTest": 4,
+ "training":[{"image":"./imagesTr/2.nii.gz","label":"./labelsTr/2.nii.gz"},{"image":"./imagesTr/3.nii.gz","label":"./labelsTr/3.nii.gz"},{"image":"./imagesTr/4.nii.gz","label":"./labelsTr/4.nii.gz"},{"image":"./imagesTr/5.nii.gz","label":"./labelsTr/5.nii.gz"},{"image":"./imagesTr/6.nii.gz","label":"./labelsTr/6.nii.gz"},{"image":"./imagesTr/8.nii.gz","label":"./labelsTr/8.nii.gz"},{"image":"./imagesTr/9.nii.gz","label":"./labelsTr/9.nii.gz"},{"image":"./imagesTr/10.nii.gz","label":"./labelsTr/10.nii.gz"},{"image":"./imagesTr/11.nii.gz","label":"./labelsTr/11.nii.gz"},{"image":"./imagesTr/12.nii.gz","label":"./labelsTr/12.nii.gz"},{"image":"./imagesTr/13.nii.gz","label":"./labelsTr/13.nii.gz"},{"image":"./imagesTr/14.nii.gz","label":"./labelsTr/14.nii.gz"},{"image":"./imagesTr/16.nii.gz","label":"./labelsTr/16.nii.gz"},{"image":"./imagesTr/18.nii.gz","label":"./labelsTr/18.nii.gz"},{"image":"./imagesTr/19.nii.gz","label":"./labelsTr/19.nii.gz"},{"image":"./imagesTr/20.nii.gz","label":"./labelsTr/20.nii.gz"}],
+ "test":["./imagesTr/1.nii.gz","./imagesTr/7.nii.gz","./imagesTr/15.nii.gz","./imagesTr/17.nii.gz"]
+}
+
+
+
