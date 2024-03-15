@@ -69,7 +69,7 @@ CuDNN 8.3.2.44
 * Run `sh run_ssl.sh` for pre-training (4 GPUs with 24G. Before running it, you need to modify some addresses.)
 
 ### Pre-trained Model
-* Pre-trained model is available in [here](https://drive.google.com/drive/folders/15RlO7l8njzqCt4ccXIwBIjPXZo94Z118?usp=sharing).
+* Pre-trained model is available in [MedCoSS_Report_Xray_CT_MR_Path_Buffer0.05](https://drive.google.com/drive/folders/15RlO7l8njzqCt4ccXIwBIjPXZo94Z118?usp=sharing).
 
 ### Fine-tuning
 * Run `sh run_ds.sh` for fine-tuning. (one GPU with 11G. Before running it, you need to modify some addresses.)
