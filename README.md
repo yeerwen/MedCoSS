@@ -24,7 +24,7 @@ CuDNN 8.3.2.44
   * RICORD dataset: Download the [MIDRC-RICORD-1A dataset](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=80969742#80969742171ba531fc374829b21d3647e95f532c) and [MIDRC-RICORD-1B dataset](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=80969771).
     The folder structure of the dataset should be like
 
-        dataset/data_nii_v0/
+        dataset/RICORD_nii/
           ├── MIDRC-RICORD-1A
           ├── MIDRC-RICORD-1B
   * LiTS dataset: Download the [LiTS dataset](https://competitions.codalab.org/competitions/17094).

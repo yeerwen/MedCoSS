@@ -15,8 +15,8 @@ def truncate(CT):
     CT[np.where(CT >= max_HU)] = max_HU
     return CT
 
-ori_path = '/media/userdisk0/ywye/Contiual_learning/3D/RICORD/data_nii_v0'
-save_path = '/media/userdisk0/ywye/Contiual_learning/3D/RICORD/data_nii_v0_resize'
+ori_path = '/media/userdisk0/ywye/Contiual_learning/3D/RICORD/RICORD_nii'
+save_path = '/media/userdisk0/ywye/Contiual_learning/3D/RICORD/RICORD_nii_resize'
 sub_path = ["MIDRC-RICORD-1A", "MIDRC-RICORD-1B"]
 count = -1
 
