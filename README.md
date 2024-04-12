@@ -51,7 +51,7 @@ CuDNN 8.3.2.44
   * PudMed20k dataset: None.
   * ChestXR dataset: None.
   * QaTav2 dataset: Using `Preprocess/QaTav2.py` to pre-process.
-  * RICORD dataset: Using `Preprocess/RICORD.py` to pre-process.
+  * RICORD dataset: Using `Preprocess/RICORD.py` to pre-process. Data Splits can be obtained from `/Downstream/Dim_3/RICORD/data_split`.
   * LiTS dataset: 
     * (1) Resampling all data to the same spacing of 1.5mm × 0.8mm × 0.8mm; 
     * (2) Using the [nnUNet v1](https://github.com/MIC-DKFZ/nnUNet/tree/nnunetv1) framework to pre-process.
