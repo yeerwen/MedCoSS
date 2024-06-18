@@ -91,7 +91,7 @@ If this code is helpful for your study, please cite:
   title={Continual Self-supervised Learning: Towards Universal Multi-modal Medical Data Representation Learning},
   author={Ye, Yiwen and Xie, Yutong and Zhang, Jianpeng and Chen, Ziyang and Wu, Qi and Xia, Yong},
   booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
-  pages={},
+  pages={11114-11124},
   year={2024},
 }
 ```
