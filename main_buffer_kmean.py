@@ -46,6 +46,8 @@ def get_args_parser():
     # Model parameters
     parser.add_argument('--model', default='unified_vit', type=str, metavar='MODEL',
                         help='Name of model to train')
+    
+    parser.add_argument('--input_size', default=224, type=int, help='images input size')
 
     parser.add_argument('--mask_ratio', default=0.00, type=float,
                         help='Masking ratio (percentage of removed patches).')
@@ -53,7 +55,6 @@ def get_args_parser():
     parser.add_argument('--norm_pix_loss', action='store_true',
                         help='Use (per-patch) normalized pixels as targets for computing loss')
     parser.set_defaults(norm_pix_loss=False)
-
     # Dataset parameters
     parser.add_argument('--data_path', default='/datasets01/imagenet_full_size/061417/', type=str,
                         help='dataset path')
